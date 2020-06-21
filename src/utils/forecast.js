@@ -10,8 +10,8 @@ const forecast = (lat, long, callback) => {
     
         }
         else {
-            const {weather_descriptions:weatherDescription, temperature, feelslike} = res.body.current
-            callback(undefined, `The weather is ${weatherDescription[0]}. It is currently ${temperature} fahrenheit but it feels like ${feelslike} fahrenheit!`)
+            const {weather_descriptions:weatherDescription, temperature, feelslike, visibility, wind_speed:windSpeed, precip, humidity} = res.body.current
+            callback(undefined, `The weather is ${weatherDescription[0]}. It is currently ${temperature} fahrenheit but it feels like ${feelslike} fahrenheit! Visibility is ${visibility}km, wind speed is ${windSpeed}kmph, humidity is ${humidity}% and ${precip}mm precipitation`)
         }
     })
 
